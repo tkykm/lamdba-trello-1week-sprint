@@ -1,0 +1,7 @@
+.serverless
+*.pyc
+*.pyo
+.python-version
+node_modules
+config.json
+

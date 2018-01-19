@@ -1,0 +1,8 @@
+{
+    "TRELLO_KEY": "<your trello key>",
+    "TRELLO_SECRET": "your trello secret",
+    "TRELLO_BOARD": "<your trello board id>",
+    "TRELLO_LIST_DONE": "<your kind of done list id>",
+    "TRELLO_LIST_DONE": "<your kind of backlog list id>",
+    "TRELLO_LISTS_PROGRESS": "<your kind of progress lists. you can specify multi ids by using ':' e.g. id1:id2:id3>" 
+}

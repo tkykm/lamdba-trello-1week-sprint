@@ -1,0 +1,31 @@
+service: trello-1week-sprint
+package:
+  exclude:
+    - .git/**
+    - config.json
+    - readme.md
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+provider:
+  name: aws
+  runtime: python2.7
+  environment:
+    TRELLO_KEY: ${file(config.json):TRELLO_KEY}
+    TRELLO_SECRET: ${file(config.json):TRELLO_SECRET}
+    TRELLO_BOARD: ${file(config.json):TRELLO_BOARD}
+    TRELLO_LIST_DONE: ${file(config.json):TRELLO_LIST_DONE}
+    TRELLO_LIST_BACKLOG: ${file(config.json):TRELLO_LIST_BACKLOG}
+    TRELLO_LISTS_PROGRESS: ${file(config.json):TRELLO_LISTS_PROGRESS}
+
+functions:
+  trello:
+    handler: handler.run
+    events:
+      # Invoke Lambda function every weekend
+      - schedule: cron(0 0 ? * SUN *)

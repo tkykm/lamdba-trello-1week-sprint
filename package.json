@@ -1,0 +1,10 @@
+{
+  "name": "trello-1week-sprint",
+  "version": "1.0.0",
+  "description": "Move all card on progress list to backlog list and archive all card on Done list",
+  "author": "tkykm",
+  "license": "",
+  "dependencies": {
+    "serverless-python-requirements": "^3.3.0"
+  }
+}
